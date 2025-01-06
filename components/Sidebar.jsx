@@ -1,45 +1,33 @@
-
-import {assets} from '../assets/assets'
+import React from 'react'
+import { assets } from '../assets/assets'
 const Sidebar = () => {
-  return (
-    <div className='w-[25%] flex-col p-2 h-full gap-2 text-white hidden lg:flex'>
-        <div className='h-[15%] bg-[#121212] rounded flex flex-col justify-around'>
-            <div className='flex items-center gap-3 pl-8 cursor-pointer'>
-                <img className='w-6' src={assets.home_icon} alt=""/>
-                <p className="font-bold">Home</p>
-            </div>
-            <div className='flex items-center gap-3 pl-8 cursor-pointer'>
-                <img className='w-6' src={assets.search_icon} alt=""/>
-                <p className="font-bold">Search</p>
-            </div>
-        </div>
-        <div className='h-[85%] rounded bg-[#121212]'>
-          <div className='flex items-center justify-between p-4'>
-            <div className='flex items-center gap-3'>
-              <img className='w-8' src={assets.stack_icon} alt="" />
-              <p className='font-semibold'>your library</p>
-            </div>
-            <div className='flex items-center gap-3'>
-              <img className='w-5' src={assets.arrow_icon} alt='' />
-              <img className='w-5' src={assets.plus_icon} alt='' />
-            </div>
-            
-          </div>
-          <div className='bg-[#242424] flex rounded m-2 rounded flex-col items-start justify-start font-semibold gap-1 p-2'>
-            <h1>Create your first playlist</h1>
-            <p className='font-light'>its easy we will help you</p>
-            <button className='bg-white px-4 py-1.5 text-black text-[15px] rounded-full mt-4 items-center'>create playlist</button>
-          </div>
-          <div className='bg-[#242424] flex rounded m-2 rounded flex-col items-start justify-start font-semibold gap-1 p-2'>
-            <h1>let find podcasts to follw</h1>
-            <p className='font-light'>we will keep you update on new episodes</p>
-            <button className='bg-white px-4 py-1.5 text-black text-[15px] rounded-full mt-4 items-center'>Browse podcasts</button>
-          </div>
+    return (
+        <div className='bg-[#003A10] min-h-screen pl-[4vw]'>
+            <img src={assets.logo} className='mt-5 w-[max(10vw,100px)] hidden sm:block' alt="" />
+            <img src={assets.logo_small} className='mt-5 w-[max(5vw,40px)] mr-5  sm:hidden block' alt="" />
+                <div className='flex flex-col gap-5 mt-10'>
+                    <NavLink to='/add-song' className='flex items-center gap -2.5 text-gray-800 bg-white border border-black p-2 pr-[max(8vw,10px)] drop-shadow-[-4px_4px_#00FF5B] text-sm font-medium'>
+                        <img src={assets.add_song} className='w-5' alt="" />
+                        <p className='hidden sm:block'>Add Song </p>
+                    </NavLink>
 
+                    <NavLink to='/list-song' className='flex items-center gap -2.5 text-gray-800 bg-white border border-black p-2 pr-[max(8vw,10px)] drop-shadow-[-4px_4px_#00FF5B] text-sm font-medium'>
+                        <img src={assets.song_icon} className='w-5' alt="" />
+                        <p className='hidden sm:block'>List Song </p>
+                    </NavLink>
+
+                    <NavLink to='/add-album' className='flex items-center gap -2.5 text-gray-800 bg-white border border-black p-2 pr-[max(8vw,10px)] drop-shadow-[-4px_4px_#00FF5B] text-sm font-medium'>
+                        <img src={assets.add_album} className='w-5' alt="" />
+                        <p className='hidden sm:block'>Add Album </p>
+                    </NavLink>
+
+                    <NavLink to='/list-album' className='flex items-center gap -2.5 text-gray-800 bg-white border border-black p-2 pr-[max(8vw,10px)] drop-shadow-[-4px_4px_#00FF5B] text-sm font-medium'>
+                        <img src={assets.album_icon} className='w-5' alt="" />
+                        <p className='hidden sm:block'>List Album </p>
+                    </NavLink>
+
+                </div>
         </div>
-      
-    </div>
-  )
+    )
 }
-
 export default Sidebar
